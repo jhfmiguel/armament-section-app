@@ -14,15 +14,21 @@ export default function Layout( props: LayoutProps ) {
     
     return (
 
-        <div>
+        <div className={`flex h-screen w-screen`}>
 
             <SideMenu />
 
-            <Header title={props.title} subtitle={props.subtitle}/>
+            <div className={`flex flex-col w-full p-7 bg-gray-300 dark:bg-gray-800`}>
 
-            <Content>
-                {props.children}
-            </Content>
+                <Header title={props.title} subtitle={props.subtitle}/>
+
+                <Content>
+                    {props.children}
+                </Content>
+
+            </div>
+
+
 
         </div>
 
