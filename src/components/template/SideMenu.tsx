@@ -5,7 +5,8 @@ import {AssetIcon, EquipamentIcon, HomeIcon, IntelligenceIcon, MissionIcon, Susp
 export default function SideMenu() {
 
     return (
-        <aside>
+        <aside 
+            className="flex flex-col  bg-gray-200 dark:bg-gray-900">
             
             <ul>
                     <ItemMenu url="/" text="" icon={HomeIcon}/>
