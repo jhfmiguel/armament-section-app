@@ -1,19 +1,33 @@
 'use client'
 
-import { createContext } from "react"
+import { createContext, useState } from "react"
+
+type Theme = 'dark' | ''
 
 interface AppContextProps {
-    name: string
+    theme?: string
+    changeTheme?: () => void
 }
 
-export const AppContext = createContext({} as AppContextProps)
+export const AppContext = createContext<AppContextProps>({})
 
 export default function AppContextProvider( { children }: { children: React.ReactNode }){
+
+    const [ theme, setTheme ] = useState<Theme>('')
+
+    function changeTheme() {
+
+        setTheme( theme === '' ? 'dark' : '' )
+
+    }
 
     return (
 
         <AppContext.Provider value={{
-            name: 'Context API Test'
+
+            theme,
+            changeTheme
+            
         }}>
 
             {children}

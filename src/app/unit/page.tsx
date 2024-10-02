@@ -6,14 +6,17 @@ import useAppData from "../../data/hook/useAppData"
 
 export default function Unit() {
 
-    const datas = useAppData()
+    const { changeTheme } = useAppData()
 
     return (
         <div className="">
         
         <Layout title="Unit" subtitle="Unit Registration">
 
-            <h3>{datas.name}</h3>
+            <button 
+                onClick={changeTheme}>
+                    Change Theme
+            </button>
 
         </Layout>
 
